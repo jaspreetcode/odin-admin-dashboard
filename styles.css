@@ -28,3 +28,40 @@
 .content {
   background-color: #e2e8f0;
 }
+
+/* Sidebar Design */
+.sidebar {
+  display: grid;
+  grid-template-rows: 80px 5fr;
+  z-index: 2;
+}
+
+.sidebar > .title {
+  background-color: rgb(163, 163, 163);
+  grid-row: 1 / 2;
+  font-size: 1.5rem;
+}
+
+.sidebar > .side-nav {
+  grid-row: 2 / 6;
+  display: grid;
+  grid-template-rows: 250px 1fr;
+}
+
+.side-nav > .utility-nav {
+  background-color: aqua;
+  font-size: 1.2rem;
+}
+
+.utility-nav > p {
+  margin-bottom: 10px;
+}
+
+.side-nav > .preferences-nav {
+  background-color: rgb(187, 136, 136);
+  font-size: 1.2rem;
+}
+
+.preferences-nav > p {
+  margin-bottom: 10px;
+}
