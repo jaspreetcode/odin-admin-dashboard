@@ -65,3 +65,56 @@
 .preferences-nav > p {
   margin-bottom: 10px;
 }
+
+/* Header design */
+
+.main > .header {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  padding: 20px 30px 10px 30px;
+}
+
+.header > .header-up {
+  background-color: azure;
+}
+
+.header > .header-down {
+  background-color: beige;
+}
+
+.header-up {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
+}
+
+.header-down {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.header-down .welcome {
+  display: flex;
+  background-color: brown;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-down > .welcome > .wel-logo {
+  padding: 10px;
+}
+
+.header-down > .header-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-content: center;
+  margin: auto;
+}
+
+.header-down > .header-buttons > button {
+  border: none;
+  width: 80px;
+  height: 35px;
+  background-color: #3493d4;
+  border-radius: 20px;
+}
