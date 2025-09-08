@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-container {
@@ -11,12 +14,12 @@
 
 .sidebar {
   background-color: #3493d4;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .main {
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 180px 4fr;
 }
 
 .header {
@@ -32,75 +35,158 @@
 /* Sidebar Design */
 .sidebar {
   display: grid;
-  grid-template-rows: 80px 5fr;
+  grid-template-rows: 60px 5fr;
   z-index: 2;
+  padding: 15px;
 }
 
 .sidebar > .title {
-  background-color: rgb(163, 163, 163);
   grid-row: 1 / 2;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: white;
+  font-weight: 400;
+}
+
+svg.dashboard {
+  fill: white;
+  width: 3rem;
+}
+
+svg.home,
+svg.profile,
+svg.message,
+svg.history,
+svg.tasks,
+svg.community,
+svg.settings,
+svg.support,
+svg.privacy {
+  fill: white;
+  width: 1.5rem;
 }
 
 .sidebar > .side-nav {
   grid-row: 2 / 6;
   display: grid;
-  grid-template-rows: 250px 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 2rem;
 }
 
-.side-nav > .utility-nav {
-  background-color: aqua;
+.side-nav > .utility-nav,
+.side-nav > .preferences-nav {
   font-size: 1.2rem;
-}
-
-.utility-nav > p {
-  margin-bottom: 10px;
+  display: grid;
+  align-content: center;
+  padding-left: 15px;
+  gap: 1rem;
 }
 
 .side-nav > .preferences-nav {
-  background-color: rgb(187, 136, 136);
-  font-size: 1.2rem;
+  align-content: start;
 }
 
+.utility-nav > p,
 .preferences-nav > p {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
 }
 
 /* Header design */
 
 .main > .header {
   display: grid;
-  grid-template-rows: 60px 1fr;
-  padding: 20px 30px 10px 30px;
+  grid-template-rows: 50px 1fr;
+  padding: 10px 30px 10px 30px;
+  /* gap: 0.25rem; */
 }
 
 .header > .header-up {
-  background-color: azure;
-}
-
-.header > .header-down {
-  background-color: beige;
-}
-
-.header-up {
   display: grid;
-  grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 6rem;
+}
+
+.header-up > .search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-up > .up-nav {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+  align-content: center;
+  padding-right: 50px;
+}
+
+svg.magnifying-glass,
+.bell svg {
+  width: 1.4rem;
+}
+
+.search > .search-bar {
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  flex: 1 1 auto;
+}
+
+.bell,
+.logo,
+.username {
+  align-self: center;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.up-nav > .logo > img {
+  width: 45px;
+  border-radius: 50%;
 }
 
 .header-down {
   display: grid;
   grid-template-columns: 3fr 2fr;
+  gap: 4rem;
 }
 
 .header-down .welcome {
   display: flex;
-  background-color: brown;
   align-items: center;
   gap: 1.5rem;
 }
 
 .header-down > .welcome > .wel-logo {
   padding: 10px;
+}
+
+.header-down > .welcome > .wel-logo img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.header-down > .welcome > .user-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  gap: 0.25rem;
+}
+
+.header-down > .welcome > .user-info > .greet {
+  font-size: smaller;
+}
+
+.header-down > .welcome > .user-info > .name {
+  font-size: 1.2rem;
 }
 
 .header-down > .header-buttons {
@@ -113,23 +199,29 @@
 
 .header-down > .header-buttons > button {
   border: none;
-  width: 80px;
+  width: 90px;
   height: 35px;
   background-color: #3493d4;
+  color: white;
   border-radius: 20px;
+  font-weight: bold;
 }
 
 /* Content section */
 .content {
   display: grid;
-  padding: 20px;
-  grid-template-columns: 3fr 1fr;
+  padding: 30px 20px;
+  grid-template-columns: 3fr 1.3fr;
 }
 
 .content > .project-section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.content > .project-section > .title {
+  font-size: 1.15rem;
 }
 
 .content > .project-section > .cells {
@@ -140,6 +232,43 @@
 
 .content > .project-section > .cells > .cell {
   background-color: white;
+  padding: 30px 30px 20px 30px;
+  border-radius: 10px;
+  border-left: 10px solid #f0b442;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+  box-shadow: 1px 2px 8px rgb(197, 197, 197);
+}
+
+.content > .project-section > .cells > .cell > .cell-main > .title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.content > .project-section > .cells > .cell > .cell-main > p {
+  color: gray;
+}
+
+.content > .project-section > .cells > .cell > .tray {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  justify-content: end;
+  margin-top: 30px;
+}
+
+.star,
+.eye,
+.fork {
+  justify-self: end;
+}
+
+.star svg,
+.eye svg,
+.fork svg {
+  width: 1.5rem;
 }
 
 .announce-section {
@@ -160,10 +289,26 @@
   display: grid;
   grid-template-columns: 1fr;
   flex-grow: 1;
+  border-radius: 8px;
+  padding: 20px 30px 20px 30px;
+  box-shadow: 1px 2px 8px rgb(197, 197, 197);
 }
 
 .announcement > .container > .section {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(191, 188, 188);
+  padding-bottom: 20px;
+}
+
+.announcement > .container > .section > .title {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgb(52, 51, 51);
+}
+
+.announcement > .container > .section > p {
+  font-size: 0.8rem;
+  color: gray;
 }
 
 .announcement > .container > .section:last-child {
@@ -181,10 +326,39 @@
   display: grid;
   grid-template-columns: 1fr;
   flex-grow: 1;
+  border-radius: 8px;
+  padding: 20px 30px 20px 30px;
+  box-shadow: 1px 2px 8px rgb(197, 197, 197);
 }
 
 .trending > .container > .section {
-  border-bottom: 1px solid gray;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  align-content: center;
+}
+
+.trending > .container > .section > img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.trending > .container > .section > .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trending > .container > .section > .info > .tag {
+  color: rgb(39, 38, 38);
+}
+
+.trending > .container > .section > .info > .subtitle {
+  color: gray;
+}
+
+.trending > .container > .section > img {
+  width: 60px;
+  border-radius: 50%;
 }
 
 .trending > .container > .section:last-child {
